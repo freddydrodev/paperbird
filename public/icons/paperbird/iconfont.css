@@ -44,7 +44,7 @@
 
 [class*="icon-account"]:before { content: "\e6b8"; }
 
-[class*="icon-delivery"]:before { content: "\e6bf"; }
+[class*="icon-deliveries"]:before { content: "\e6bf"; }
 
 [class*="icon-tags"]:before { content: "\e6c5"; }
 
@@ -54,13 +54,13 @@
 
 [class*="icon-products"]:before { content: "\e6cb"; }
 
-[class*="icon-office"]:before { content: "\e705"; }
+[class*="icon-help"]:before { content: "\e705"; }
 
 [class*="icon-remind"]:before { content: "\e713"; }
 
 [class*="icon-customers"]:before { content: "\e726"; }
 
-[class*="icon-wxbbaobiao"]:before { content: "\e618"; }
+[class*="dashboard"]:before { content: "\e618"; }
 
 [class*="icon-wxbbiaowang"]:before { content: "\e619"; }
 
@@ -68,7 +68,7 @@
 
 [class*="icon-naozhong"]:before { content: "\e648"; }
 
-[class*="icon-shezhi"]:before { content: "\e64b"; }
+[class*="icon-settings"]:before { content: "\e64b"; }
 
 [class*="icon-shouye"]:before { content: "\e64f"; }
 
@@ -88,7 +88,7 @@
 
 [class*="icon-zonghe"]:before { content: "\e69e"; }
 
-[class*="icon-tixing"]:before { content: "\e6cc"; }
+[class*="icon-notification"]:before { content: "\e6cc"; }
 
 [class*="icon-messenger"]:before { content: "\e803"; }
 

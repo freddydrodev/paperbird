@@ -247,16 +247,16 @@
 	.mt-3;
 }
 .mb-3 {
-	margin-bottom: @space4;
+	margin-bottom: @spacer;
 }
 .ml-3 {
-	margin-left: @space4;
+	margin-left: @spacer;
 }
 .mr-3 {
-	margin-right: @space4;
+	margin-right: @spacer;
 }
 .mt-3 {
-	margin-top: @space4;
+	margin-top: @spacer;
 }
 .mx-3 {
 	.ml-3;
@@ -432,13 +432,21 @@
 }
 
 /*** Button ***/
-
+.btn-block {
+	.w-100;
+	.px-3;
+	.py-2;
+	.h-auto;
+}
 /*** bg ***/
 .bg-main {
 	background-color: @main-background;
 }
 .bg-transparent {
 	background-color: transparent !important;
+}
+.bg-white {
+	background-color: white !important;
 }
 
 /*** txt ***/
@@ -463,10 +471,26 @@
 	line-break: 18px;
 }
 .small {
-	font-size: 0.7em;
+	font-size: 0.9em;
 }
 .text-white {
 	color: white;
+}
+
+.capitalize {
+	text-transform: @capitalize;
+}
+.uppercase {
+	text-transform: @uppercase;
+}
+.lowercase {
+	text-transform: @lowercase;
+}
+.bold {
+	font-weight: 500;
+}
+.black {
+	font-family: 'nunitoblack';
 }
 
 /*** display ***/
@@ -533,21 +557,33 @@
 .static {
 	position: static !important;
 }
+.left-0 {
+	left: @zero;
+}
+.top-0 {
+	top: @zero;
+}
+.right-0 {
+	right: @zero;
+}
+.bottom-0 {
+	bottom: @zero;
+}
 .fixed-left {
 	.fixed;
-	left: @zero;
+	.left-0
 }
 .fixed-top {
 	.fixed;
-	top: @zero;
+	.top-0;
 }
 .fixed-right {
 	.fixed;
-	right: @zero;
+	.right-0;
 }
 .fixed-bottom {
 	.fixed;
-	bottom: @zero;
+	.bottom-0;
 }
 .fixed-top-left {
 	.fixed-top;
