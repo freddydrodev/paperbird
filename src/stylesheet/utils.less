@@ -1,4 +1,5 @@
 // @import './var';
+@import './var';
 
 /**padding **/
 //zero
@@ -341,6 +342,18 @@
 .border-left {
 	border-left: @border-thin;
 }
+.border-top-0 {
+	border-top: @zero;
+}
+.border-right-0 {
+	border-right: @zero;
+}
+.border-bottom-0 {
+	border-bottom: @zero;
+}
+.border-left-0 {
+	border-left: @zero;
+}
 .rounded-0 {
 	border-radius: @zero;
 }
@@ -673,6 +686,12 @@
 .shadow-0:focus,
 .shadow-0:active {
 	box-shadow: none !important;
+}
+.default-shadow {
+	box-shadow: 0 0 15px rgba(0, 0, 0, .05) !important;
+}
+.default-shadow-hover {
+	box-shadow: 0 5px 20px rgba(0, 0, 0, .05) !important;
 }
 .text-primary {
 	color: @primary-color;

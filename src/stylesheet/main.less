@@ -1,5 +1,4 @@
 @import './reset';
-@import './var';
 @import './utils';
 body {
 	font-size: 18px;
@@ -38,11 +37,11 @@ body {
 }
 .ant-input {
 	.border-0;
-	box-shadow: 0 0 15px rgba(0, 0, 0, .05);
+	.default-shadow;
 }
 .ant-input:focus {
 	.border-0;
-	box-shadow: 0 5px 20px rgba(0, 0, 0, .05) !important;
+	.default-shadow-hover;
 }
 
 .ant-btn-danger {
@@ -51,4 +50,15 @@ body {
 }
 .ant-badge-count {
 	box-shadow: 0 0 0 3px @main-background !important;
+}
+.ant-card-head {
+	.border-bottom-0;
+	.bg-transparent;
+}
+.ant-card-body {
+	// .p-0;
+}
+.ps__rail-y .ps__thumb-y {
+	width: 4px;
+	.rounded-0;
 }
