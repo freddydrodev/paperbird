@@ -1,3 +1,37 @@
+@import '../../../../stylesheet/utils';
+
 .MenuLeft {
-    height: ~"calc(100% - 310px)";
+	height: ~'calc(100% - 310px)';
+	.border-0;
+    .relative;
+    
+	.ant-menu-item-group:not(:first-child) {
+		.mt-3;
+	}
+
+	.ant-menu-item-group-title {
+		.uppercase;
+		.bold;
+		font-size: 10px !important;
+	}
+
+	.ant-menu-item {
+		.capitalize;
+		.p-0;
+		.my-0;
+
+		.anticon {
+			font-size: 22px;
+        }
+        a {
+            .px-3;
+            transition: cubic-bezier(0.77, 0, 0.175, 1) all .3s;
+        }
+        a.active {
+            border-left: 4px solid #665ae9;
+            .pl-4;
+            .text-primary;
+            background-color: @menu-item-active-bg;
+        }
+	}
 }

@@ -15,7 +15,9 @@ class AppWrapper extends Component {
 				<AppSider />
 				<Content className="px-3">
 					<AppHeader />
-					<Switch>{AppRoutes.map((settings) => <Route key={settings.title} {...settings} />)}</Switch>
+					<Switch>
+						{AppRoutes.map((settings) => <Route key={settings.title} {...settings} />)}
+					</Switch>
 				</Content>
 			</Layout>;
 	}

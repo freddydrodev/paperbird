@@ -3,27 +3,27 @@ const config = [
 		main: [
 			{
 				to: 'dashboard',
-				exact: true,
+				exact: false,
 				text: 'dashboard'
 			},
 			{
 				to: 'shops',
-				exact: true,
+				exact: false,
 				text: 'shops'
 			},
 			{
 				to: 'categories',
-				exact: true,
+				exact: false,
 				text: 'categories'
 			},
 			{
 				to: 'products',
-				exact: true,
+				exact: false,
 				text: 'products'
 			},
 			{
 				to: 'tags',
-				exact: true,
+				exact: false,
 				text: 'tags'
 			}
 		]
@@ -32,12 +32,12 @@ const config = [
 		users: [
 			{
 				to: 'customers',
-				exact: true,
+				exact: false,
 				text: 'customers'
 			},
 			{
 				to: 'employees',
-				exact: true,
+				exact: false,
 				text: 'employees'
 			}
 		]
@@ -46,17 +46,17 @@ const config = [
 		activities: [
 			{
 				to: 'orders',
-				exact: true,
+				exact: false,
 				text: 'orders'
 			},
 			{
 				to: 'sales',
-				exact: true,
+				exact: false,
 				text: 'sales'
 			},
 			{
 				to: 'deliveries',
-				exact: true,
+				exact: false,
 				text: 'deliveries'
 			}
 		]
@@ -67,17 +67,17 @@ const config = [
     tools: [
         {
             to: 'calculator',
-            exact: true,
+            exact: false,
             text: 'calculator'
         },
         {
             to: 'sales',
-            exact: true,
+            exact: false,
             text: 'sales'
         },
         {
             to: 'deliveries',
-            exact: true,
+            exact: false,
             text: 'deliveries'
         },
     ]
