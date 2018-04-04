@@ -1,35 +1,25 @@
 import React, { Component } from 'react';
-import { Button, Input, Popover } from 'antd';
+import { Input } from 'antd';
 
-import './EditPopup.less';
-import Auxiliary from '../../../../hoc/Auxiliary/Auxiliary';
+import EditPopup from '../EditPopup/EditPopup';
 
 export default class TextCell extends Component {
 	render() {
-		const { value, data, editable } = this.props;
+		const { value, editable } = this.props;
 
-		const content = (
-			<Auxiliary>
-				<Input placeholder="New Value" className="m-3" style={{width: 220}} />
-				<div>
-					<Button icon="cross" type="danger" className="w-50 rounded-0 border-0" size="large" />
-					<Button icon="check" type="primary" className="w-50 rounded-0 border-0" size="large" />
-				</div>
-			</Auxiliary>
-		);
+		if (editable) {
+			const content = (
+				<Input
+					placeholder="New Value"
+					className="rounded-0 border-0 border-bottom"
+					size="large"
+					style={{ width: 240 }}
+				/>
+			);
 
-		return (
-			<div className="flex between">
-				{value}
-				<Popover
-					trigger="click"
-					content={content}
-					placement="bottomRight"
-					className="EditPopup"
-				>
-					<Button icon="edit" shape="circle" type="ghost" className="border-0" />
-				</Popover>
-			</div>
-		);
+			return <EditPopup content={content} submit={true}>{value}</EditPopup>;
+		}
+
+		return value;
 	}
 }

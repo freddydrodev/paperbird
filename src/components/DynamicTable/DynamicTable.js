@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Input } from 'antd';
+import { Table } from 'antd';
 
 import DynamicCell from './DynamicCell/DynamicCell';
 

@@ -10,7 +10,7 @@ module.exports = function override(config, env) {
 			'@text-color-secondary': '#354168',
 			'@warning-color': '#F7354D',
 			'@info-color': '#00BBFE',
-			'@success-color ': '#49EB29',
+			'@success-color ': '#16E581',
 			'@error-color': '#F7354D',
 			'@normal-color': '#D8DDEB',
 			'@text-color': '#8891A5',
