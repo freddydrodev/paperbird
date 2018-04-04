@@ -1,8 +1,40 @@
 import React, { Component } from 'react';
 
+import DynamicTable from '../../components/DynamicTable/DynamicTable';
+import config from './columns.config';
+
+const dataSource = [
+	{
+		name: 'Uncategorized',
+		products: 12,
+		creationDate: '2018-03-20',
+		createdBy: 'Fredius Tout Court',
+		color: null,
+		option: 'ici',
+		key: '_id'
+	},
+	{
+		name: 'tc',
+		products: 12,
+		creationDate: '2018-03-20',
+		createdBy: 'Fredius Tout',
+		color: 'red',
+		option: 'ici',
+		key: '_id2'
+	}
+];
+
 class Customers extends Component {
 	render() {
-		return <div>Customers</div>;
+		return (
+			<DynamicTable
+				tableConfig={{
+					scroll: { x: 2600 }
+				}}
+				columns={config}
+				dataSource={dataSource}
+			/>
+		);
 	}
 }
 

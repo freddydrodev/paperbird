@@ -13,7 +13,6 @@ export default class EditPopup extends Component {
 
 		actived = !actived;
 		visible = actived;
-		console.log(actived, visible);
 		this.setState({ actived, visible });
 	};
 
@@ -45,7 +44,7 @@ export default class EditPopup extends Component {
 		const { visible, actived } = this.state;
 		const classNames = `${actived && ' active'}`;
 		return (
-			<div className="flex between EditPopup">
+			<div className="flex between middle EditPopup">
 				{this.props.children}
 				<Popover visible={visible} trigger="click" content={content} placement="bottomRight">
 					<Button

@@ -10,7 +10,7 @@ import DateCell from './DateCell/DateCell.js';
 export default class DynamicCell extends Component {
 	render() {
 		const { value, editable, data, type } = this.props;
-		let output = value;
+		let output = value || '';
 
 		if (editable) {
 			switch (type) {

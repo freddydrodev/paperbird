@@ -15,7 +15,7 @@ export default class DynamicTable extends Component {
 					value={currentValue}
 				/>
 			),
-			width: 150,
+			width: 200,
 			...e,
 			type: null
 		}));
@@ -25,7 +25,7 @@ export default class DynamicTable extends Component {
 				rowSelection={{}}
 				bordered={true}
 				size="small"
-				scroll={{x: 700, y: 500}}
+				scroll={{ x: 1200 }}
 				{...this.props.tableConfig}
 				dataSource={this.props.dataSource}
 				columns={columns}

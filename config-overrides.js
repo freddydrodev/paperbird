@@ -12,6 +12,7 @@ module.exports = function override(config, env) {
 			'@info-color': '#00BBFE',
 			'@success-color ': '#16E581',
 			'@error-color': '#F7354D',
+			'@layout-sider-background': '#423F5C',
 			'@normal-color': '#D8DDEB',
 			'@text-color': '#8891A5',
 			'@menu-bg': '#FAFAFC',
