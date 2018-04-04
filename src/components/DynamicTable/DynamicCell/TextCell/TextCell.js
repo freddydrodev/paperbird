@@ -17,7 +17,7 @@ export default class TextCell extends Component {
 				/>
 			);
 
-			return <EditPopup content={content} submit={true}>{value}</EditPopup>;
+			return <EditPopup content={content}>{value}</EditPopup>;
 		}
 
 		return value;

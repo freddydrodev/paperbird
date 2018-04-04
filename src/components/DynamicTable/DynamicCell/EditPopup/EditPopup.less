@@ -1,16 +1,23 @@
 @import '../../../../stylesheet/utils';
 
 .ant-popover-inner-content {
-    .p-0;
+	.p-0;
 }
 .editDate input {
-    .rounded-0;
-    .border-0;
-    .border-bottom;
+	.rounded-0;
+	.border-0;
+	.border-bottom;
 }
 .EditPopup button {
     .opac-0;
+    .border-0;
 }
-.EditPopup:hover button {
-    .opac;
+.EditPopup:hover button, .EditPopup button.active {
+	.opac;
+}
+
+.editSelect .ant-select-selection {
+	.rounded-0;
+	.border-0;
+	.border-bottom;
 }

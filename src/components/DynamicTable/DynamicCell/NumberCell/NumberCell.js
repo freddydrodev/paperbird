@@ -11,7 +11,6 @@ export default class NumberCell extends Component {
 			const content = (
 				<InputNumber
 					min={0}
-					max={10}
 					size="large"
 					placeholder="New Value"
 					className="rounded-0 border-0 border-bottom no-shadow"
@@ -19,7 +18,7 @@ export default class NumberCell extends Component {
 				/>
 			);
 
-			return <EditPopup content={content} submit={true}>{value}</EditPopup>;
+			return <EditPopup content={content}>{value}</EditPopup>;
 		}
 
 		return value;
