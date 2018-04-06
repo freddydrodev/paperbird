@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { message } from "antd";
 
 import DynamicTable from "../../components/DynamicTable/DynamicTable";
 import config from "./columns.config";
 import DynamicForm from "../../components/DynamicForm/DynamicForm";
-import { addCategoryFunc, addCategoryConfig } from "./addCategory";
+import addCategoryConfig from "./addCategory";
 import ModalAndSearch from "../../components/App/ModalAndSearch/ModalAndSearch";
 
 const dataSource = [
@@ -29,11 +30,37 @@ const dataSource = [
 
 class Categories extends Component {
   render() {
-    return <div>
-        <ModalAndSearch add={addCategoryFunc} content={<DynamicForm config={addCategoryConfig} />} placeholder="Search in categories" />
+    return (
+      <div>
+        <ModalAndSearch
+          add={this.addCategoryHandler}
+          content={
+            <DynamicForm
+              wrappedComponentRef={(formRef) => (this.formRef = formRef)}
+              config={addCategoryConfig}
+            />
+          }
+          placeholder="Search in categories"
+        />
         <DynamicTable columns={config} dataSource={dataSource} />;
-      </div>;
+      </div>
+    );
   }
+
+  addCategoryHandler = () => {
+    if (this.formRef) {
+      const { form } = this.formRef.props;
+
+      form.validateFields((err, res) => {
+        if (err) {
+          return false;
+        }
+        message.success(`value added is ${res.Name}`, 2);
+        console.log(res);
+        return true;
+      });
+    }
+  };
 }
 
 export default Categories;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form } from "antd";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 import DynamicControl from "./DynamicControl/DynamicControl";
 
@@ -20,4 +20,6 @@ DynamicForm.propTypes = {
   layout: PropTypes.object,
   settings: PropTypes.object
 };
-export default Form.create()(DynamicForm);
+
+const wrappedForm = Form.create()(DynamicForm);
+export default wrappedForm;

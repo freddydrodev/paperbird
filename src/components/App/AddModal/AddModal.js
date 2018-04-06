@@ -13,18 +13,9 @@ export default class AddModal extends Component {
 
     this.setState({ visible });
   };
-
-  okHandler = (submit) => {
-    let visible = true;
-
-    if (submit) {
-      visible = false;
-    }
-    this.setState({ visible });
-  };
-
+  
   render() {
-    const { title } = this.props;
+    const { title, add } = this.props;
 
     return (
       <Auxiliary>
@@ -32,6 +23,7 @@ export default class AddModal extends Component {
           title={title}
           visible={this.state.visible}
           onCancel={this.visiblityHandler}
+          onOk={add}
         >
           {this.props.children}
         </Modal>
@@ -51,5 +43,6 @@ export default class AddModal extends Component {
 AddModal.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   // submit: PropTypes.func.isRequired,
-  children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired,
+  add: PropTypes.func.isRequired
 };
