@@ -29,7 +29,7 @@ class Tags extends Component {
 		return (
 			<DynamicTable
 				tableConfig={{
-					scroll: { x: 1200 }
+					scroll: { x: 1000 }
 				}}
 				columns={config}
 				dataSource={dataSource}

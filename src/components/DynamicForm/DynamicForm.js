@@ -1,51 +1,23 @@
-import React, { Component } from 'react';
-import { Form, Input, Icon } from 'antd';
+import React, { Component } from "react";
+import { Form } from "antd";
+import PropTypes from 'prop-types';
 
-const FormItem = Form.Item;
+import DynamicControl from "./DynamicControl/DynamicControl";
 
 class DynamicForm extends Component {
-	state = {
-		extra: <p>I am an extra message</p>
-	};
-
-	render() {
-		const { getFieldDecorator, isFieldTouched, getFieldError } = this.props.form;
-		const userNameError = isFieldTouched('userName') && getFieldError('userName');
-
-		console.log(getFieldError('userName'));
-
-		return (
-			<Form layout="vertical" style={{ width: '90%' }} hideRequiredMark={false}>
-				<FormItem
-					label="Your username"
-					colon={false}
-					extra={this.state.extra}
-					help={userNameError || ''}
-					required={true}
-					validateStatus={userNameError && 'error'}
-					hasFeedback={userNameError && true}
-				>
-					{getFieldDecorator('userName', {
-						rules: [
-							{ required: true, message: 'this field is required' },
-							{ min: 5, message: 'length must be higher than 5' },
-							{ max: 15, message: 'length must be lower than 15' },
-							{ type: 'email', message: 'not email format' }
-						]
-					})(<Input prefix={<Icon type="user" />} placeholder="username" />)}
-				</FormItem>
-			</Form>
-		);
-	}
-	componentDidMount() {
-		let _extra = this.state.extra;
-		_extra = <p>I am an new extra message</p>;
-		setTimeout(() => {
-			this.setState({
-				extra: _extra
-			});
-		}, 3000);
-	}
+  render() {
+    const { config, form, layout } = this.props;
+    return (
+      <Form layout="vertical" {...this.props.settings}>
+        <DynamicControl config={config} form={form} layout={layout} />
+      </Form>
+    );
+  }
 }
 
+DynamicForm.propTypes = {
+  config: PropTypes.array.isRequired,
+  layout: PropTypes.object,
+  settings: PropTypes.object
+};
 export default Form.create()(DynamicForm);

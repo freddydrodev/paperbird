@@ -7,7 +7,7 @@ const { Option } = Select;
 
 export default class MultiCell extends Component {
 	render() {
-		const { value, editable, data } = this.props;
+		const { value, editable } = this.props;
 
 		if (editable) {
 			const content = (

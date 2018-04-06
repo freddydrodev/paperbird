@@ -1,5 +1,4 @@
 const columns = [
-	{ dataIndex: 'id', key: 'id', title: 'ID' },
 	{ dataIndex: 'name', key: 'name', title: 'Name', editable: true, type: 'text' },
 	{ dataIndex: 'values', key: 'values', title: 'Values', editable: true, type: 'multiple' },
 	{ dataIndex: 'products', key: 'products', title: 'Products' },
