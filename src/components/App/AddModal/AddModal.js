@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Modal, Popover, Button, Tooltip } from "antd";
+import { Modal, Button, Tooltip } from "antd";
 import PropTypes from "prop-types";
 
 import Auxiliary from "../../../hoc/Auxiliary/Auxiliary";
@@ -22,8 +22,9 @@ export default class AddModal extends Component {
     }
     this.setState({ visible });
   };
+
   render() {
-    const { title, submit } = this.props;
+    const { title } = this.props;
 
     return (
       <Auxiliary>
@@ -31,16 +32,17 @@ export default class AddModal extends Component {
           title={title}
           visible={this.state.visible}
           onCancel={this.visiblityHandler}
-          
         >
           {this.props.children}
         </Modal>
-        <Tooltip title={title} placement="bottom"><Button
-          icon="plus"
-          type="primary"
-          className="mr-3"
-          onClick={this.visiblityHandler}
-        /></Tooltip>
+        <Tooltip title={title} placement="bottom">
+          <Button
+            icon="plus"
+            type="primary"
+            className="mr-3"
+            onClick={this.visiblityHandler}
+          />
+        </Tooltip>
       </Auxiliary>
     );
   }

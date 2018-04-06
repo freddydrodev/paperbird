@@ -11,7 +11,7 @@ const addCategoryFunc = (name, parent, form) => {
 
 const addCategoryConfig = [
   { id: "Name", type: "text", label: "Category Name" },
-  { id: "Parent", type: "single", label: "Category Parent" }
+  { id: "Parent", type: "single", label: "Category Parent", required: false }
 ];
 
 export { addCategoryConfig, addCategoryFunc };

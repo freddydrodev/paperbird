@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 
 import ControlSwitcher from "./ControlSwitcher/ControlSwitcher";
 import config from "../../LogPages/LoginForm/LoginForm.config";
+import defaultRules from "./defaultRules/defaultRules";
+
 const FormItem = Form.Item;
 
 class DynamicControl extends Component {
@@ -27,10 +29,26 @@ class DynamicControl extends Component {
           prefix,
           suffix,
           placeholder,
-          change
+          change,
+          required
         } = setting;
         const fieldError = isFieldTouched(id) && getFieldError(id);
-        let FieldRules = rules || {};
+        let isRequired = typeof required !== "undefined" ? required : true;
+        let fieldRules = [];
+        let configRules = rules || [];
+
+        if (type) {
+          fieldRules = defaultRules(type);
+          fieldRules.concat(configRules);
+
+          if (isRequired) {
+            fieldRules.push({
+              required: true,
+              whitespace: true,
+              message: "This field is required"
+            });
+          }
+        }
 
         return (
           id && (
@@ -39,7 +57,7 @@ class DynamicControl extends Component {
               label={label}
               colon={false}
               help={fieldError}
-              required={true}
+              required={required}
               validateStatus={fieldError && "error"}
               hasFeedback={fieldError && true}
               {...this.props.layout}
@@ -47,13 +65,7 @@ class DynamicControl extends Component {
             >
               {getFieldDecorator(id, {
                 initialValue: initialValue,
-                rules: [
-                  { required: true, message: "this field is required" },
-                  { min: 5, message: "length must be higher than 5" },
-                  { max: 15, message: "length must be lower than 15" },
-                  { type: "email", message: "not email format" },
-                  ...FieldRules
-                ]
+                rules: fieldRules
               })(
                 <ControlSwitcher
                   type={type}
@@ -106,7 +118,8 @@ DynamicControl.propTypes = {
       ),
       prefix: PropTypes.element,
       suffix: PropTypes.element,
-      change: PropTypes.func
+      change: PropTypes.func,
+      required: PropTypes.bool
     })
   ).isRequired
 };

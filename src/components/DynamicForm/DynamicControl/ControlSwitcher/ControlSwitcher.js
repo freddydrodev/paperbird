@@ -33,12 +33,18 @@ export default class ControlSwitcher extends Component {
             prefix={prefix}
             suffix={suffix}
             onChange={change}
+            {...this.props}
           />
         );
         break;
       case "number":
         ctrl = (
-          <InputNumber placeholder={placeholder} min={0} onChange={change} />
+          <InputNumber
+            placeholder={placeholder}
+            min={0}
+            onChange={change}
+            {...this.props}
+          />
         );
         break;
       case "multiple":
@@ -48,14 +54,25 @@ export default class ControlSwitcher extends Component {
             mode={type === "multiple" ? type : "default"}
             onChange={change}
             showSearch
+            {...this.props}
           >
             {data &&
-              data.map((opt) => <Option key={opt.value} value={opt.value}>{opt.text}</Option>)}
+              data.map((opt) => (
+                <Option key={opt.value} value={opt.value}>
+                  {opt.text}
+                </Option>
+              ))}
           </Select>
         );
         break;
       case "date":
-        ctrl = <DatePicker placeholder={placeholder} onChange={change} />;
+        ctrl = (
+          <DatePicker
+            placeholder={placeholder}
+            onChange={change}
+            {...this.props}
+          />
+        );
         break;
       case "switch":
         ctrl = (
@@ -63,11 +80,16 @@ export default class ControlSwitcher extends Component {
             unCheckedChildren={data[0]}
             checkedChildren={data[1]}
             onChange={change}
+            {...this.props}
           />
         );
         break;
       case "check":
-        ctrl = <Checkbox onChange={change}>{placeholder}</Checkbox>;
+        ctrl = (
+          <Checkbox onChange={change} {...this.props}>
+            {placeholder}
+          </Checkbox>
+        );
         break;
       default:
         ctrl = null;
