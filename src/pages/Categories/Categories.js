@@ -33,6 +33,7 @@ class Categories extends Component {
     return (
       <div>
         <ModalAndSearch
+        title="Add Category"
           add={this.addCategoryHandler}
           content={
             <DynamicForm

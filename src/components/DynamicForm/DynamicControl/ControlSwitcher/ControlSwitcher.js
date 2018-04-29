@@ -44,6 +44,8 @@ export default class ControlSwitcher extends Component {
             min={0}
             onChange={change}
             {...this.props}
+            type={null}
+            className="w-100"
           />
         );
         break;

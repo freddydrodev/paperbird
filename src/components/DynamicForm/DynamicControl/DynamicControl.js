@@ -30,19 +30,20 @@ class DynamicControl extends Component {
           suffix,
           placeholder,
           change,
-          required
+          required,
+          min,
+          max
         } = setting;
         const fieldError = isFieldTouched(id) && getFieldError(id);
         let isRequired = typeof required !== "undefined" ? required : true;
         let fieldRules = [];
         let configRules = rules || [];
-
+        let finalRules = [];
         if (type) {
           fieldRules = defaultRules(type);
-          fieldRules.concat(configRules);
-
+          finalRules = fieldRules.concat(configRules);
           if (isRequired) {
-            fieldRules.push({
+            finalRules.push({
               required: true,
               whitespace: true,
               message: "This field is required"
@@ -65,7 +66,7 @@ class DynamicControl extends Component {
             >
               {getFieldDecorator(id, {
                 initialValue: initialValue,
-                rules: fieldRules
+                rules: finalRules
               })(
                 <ControlSwitcher
                   type={type}
@@ -74,6 +75,8 @@ class DynamicControl extends Component {
                   prefix={prefix}
                   suffix={suffix}
                   change={change}
+                  min={min}
+                  max={max}
                 />
               )}
             </FormItem>
@@ -119,7 +122,9 @@ DynamicControl.propTypes = {
       prefix: PropTypes.element,
       suffix: PropTypes.element,
       change: PropTypes.func,
-      required: PropTypes.bool
+      required: PropTypes.bool,
+      min: PropTypes.number,
+      max: PropTypes.number
     })
   ).isRequired
 };

@@ -9,11 +9,11 @@ const { Search } = Input;
 
 class ModalAndSearch extends Component {
   render() {
-    const { content, placeholder, add } = this.props;
+    const { content, placeholder, add, title } = this.props;
     return (
       <Auxiliary>
         <div className="flex py-3 middle">
-          <AddModal title="Add Category" add={add}>
+          <AddModal title={title} add={add}>
             {content}
           </AddModal>
           <Search placeholder={placeholder} className="shadow-input" />
@@ -30,7 +30,8 @@ ModalAndSearch.propTypes = {
   content: PropTypes.element.isRequired,
   // submit: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
-  add: PropTypes.func.isRequired
+  add: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired
 };
 
 export default ModalAndSearch;
